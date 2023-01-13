@@ -13,7 +13,6 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
   const resp = match[4]
   bot.sendMessage(chatId, resp)
 })
-
 // 메세지 쓸때마다 나오는 채팅
 // bot.on('message', (message) => {
 //   const chatId = message.chat.id

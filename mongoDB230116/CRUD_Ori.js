@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const USER = process.env.dbid
 const PWD = process.env.dbpw
 const HOST = process.env.dbhost
-const DB = 'test230113'
+const DB = 'test230116'
 const mongodbURL = `mongodb://${USER}:${PWD}@${HOST}/${DB}`
 // mongoose.set('useFindAndModify', false) // 6.0 이후 부터 자동관리
 mongoose.set(`strictQuery`, false) // 책에 없는 내용 // 6.0 이후 권장사항
