@@ -6,4 +6,4 @@ const testSchema = new Schema({
   explain: String
 })
 
-module.exports = mongoose.model('test', testSchema)
+module.exports = mongoose.model('dtd', testSchema)
