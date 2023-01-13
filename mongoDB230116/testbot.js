@@ -21,19 +21,7 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 //   console.log(msg)
 // })
 // 테스트중
-bot.onText(/영화순위/, (msg, match) => {
+bot.onText(/아이유/, (msg, match) => {
   const chatId = msg.chat.id
-  bot.sendMessage(chatId, gg)
-})
-bot.onText(/배고파요/, (msg, match) => {
-  const chatId = msg.chat.id
-  bot.sendMessage(chatId, '밥드세요')
-})
-bot.onText(/잠와요/, (msg, match) => {
-  const chatId = msg.chat.id
-  bot.sendMessage(chatId, '자세요')
-})
-bot.onText(/ㅌㅌㅌㅌ/, (msg, match) => {
-  const chatId = msg.chat.id
-  bot.sendMessage(chatId, 'ㅌㅌㅌ')
+  bot.sendMessage(chatId, '이쁘다')
 })

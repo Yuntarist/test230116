@@ -12,4 +12,4 @@ mongoose
   .then(() => console.log('connection successful'))
   .catch((err) => console.error(err))
 const test = require('./folder1/test용.js')
-module.exports = test
+module.exports = (mongoose, test)
