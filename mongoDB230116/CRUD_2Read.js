@@ -8,11 +8,6 @@ const main = async () => {
           name: {
             $eq: '아이유' // DB안에서 자료를 찾을때 좋다
           }
-        },
-        {
-          url: {
-            $eq: 'https://naver.com'
-          }
         }
       ]
     })
@@ -20,3 +15,4 @@ const main = async () => {
   console.log(t)
 }
 main()
+module.exports = main()
