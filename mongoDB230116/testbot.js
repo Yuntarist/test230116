@@ -12,6 +12,7 @@ const token = process.env.botid2
 
 const bot = new TelegramBot(token, { polling: true })
 const chatId1 = 5737093922
+
 // 메세지 쓸때마다 나오는 채팅
 // bot.on('message', (message) => {
 //   const chatId = message.chat.id
@@ -62,7 +63,38 @@ const naver = async () => {
   console.log(r)
   bot.sendMessage(chatId1, `${r.explain}`)
 }
-
+// 영화 읽어오기
+const nowmovie = async () => {
+  const m = await test
+    .findOne({
+      $or: [
+        {
+          name: {
+            $eq: '영화'
+          }
+        }
+      ]
+    })
+    .lean()
+  console.log(m)
+  bot.sendMessage(chatId1, `${m.explain}`)
+}
+// 식단
+const daliymeal = async () => {
+  const d = await test
+    .findOne({
+      $or: [
+        {
+          name: {
+            $eq: '월,화,수,목,금,토'
+          }
+        }
+      ]
+    })
+    .lean()
+  console.log(d)
+  bot.sendMessage(chatId1, `${d.explain}`)
+}
 // bot.onText(/아이유/, (msg, match) => {
 //   const chatId = msg.chat.id
 //   bot.sendMessage(chatId, exp)
@@ -76,4 +108,12 @@ bot.on('message', (msg) => {
   if (msg.text == '네이버') {
     naver()
   }
+  if (msg.text == '영화') {
+    nowmovie()
+  }
+  if (msg.text == '요일') {
+    daliymeal()
+  }
 })
+
+// 봇이 1:1로는 되는데 멀티로는 안되는 건에 대해서

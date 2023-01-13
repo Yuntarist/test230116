@@ -13,14 +13,19 @@ axios.get(url).then((res) => {
     moviename.push($(this).text())
   })
   console.log(rank, moviename)
-  const rank2 = rank.toString()
-  const moviename2 = moviename.toString()
-  console.log(rank2)
+
+  const result = rank.reduce((acc, cur, idx) => {
+    acc[cur] = moviename[idx]
+    return acc
+  }, new Object())
+  console.log(result)
+  const json = JSON.stringify(result)
+  console.log(json)
   const test = require('./CRUD_1Ori.js')
   const main = async () => {
     const _data = {
-      name: rank2,
-      explain: moviename2
+      name: '영화',
+      explain: json
     }
     const new_test = new test(_data)
     const t = await new_test.save()
