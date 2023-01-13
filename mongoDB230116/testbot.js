@@ -20,7 +20,8 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 //   console.log(msg)
 // })
 // 테스트중
+const main = require('./CRUD_2Read.js')
 bot.onText(/아이유/, (msg, match) => {
   const chatId = msg.chat.id
-  bot.sendMessage(chatId, '이쁘다')
+  bot.sendMessage(chatId, main)
 })
